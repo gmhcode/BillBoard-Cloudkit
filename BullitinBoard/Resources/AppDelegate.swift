@@ -7,8 +7,10 @@
 //
 
 import UIKit
-
+import CloudKit
+import UserNotifications
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -16,7 +18,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        application.registerForRemoteNotifications()
+        
+        MessageController.shared.subscribeToNewMessages { (success) in
+            print(success)
+        }
+        CKContainer.default().status(forApplicationPermission: .userDiscoverability) { (status, error) in
+            if let error = error {
+                print("❌ There was an error in \(#function) \(error) : \(error.localizedDescription)")
+                return
+            }
+            
+            guard status != .granted else {print("permissionGranted") ; return}
+            //checks to see if weve asked for permission in the past
+            
+            
+            CKContainer.default().requestApplicationPermission(.userDiscoverability, completionHandler: { (permissionStatus, error) in
+                if let error = error {
+                    print("❌ There was an error in \(#function) \(error) : \(error.localizedDescription)")
+                    return
+                }
+                print(permissionStatus)
+            })
+        }
+        
+        
+//        MessageController.shared.saveMessageToCloudKit(text: "Hello") { (message) in
+//            print(message?.text ?? "message didnt save")
+//
+//        }
+//        MessageController.shared.fetchAllMessagesFromCloudKit { (messages) in
+//            print(messages ?? [])
+//        }
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        let tabBarController = window?.rootViewController as? UITabBarController
+        guard let messageVC = tabBarController?.viewControllers?.first as? MessageListTableViewController else { return }
+        
+        messageVC.fetchAndDisplayMessages()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -43,4 +87,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
 

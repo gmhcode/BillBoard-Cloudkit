@@ -12,6 +12,12 @@
 		90E8931721DA8AB300710BF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E8931521DA8AB300710BF9 /* Main.storyboard */; };
 		90E8931921DA8AB600710BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90E8931821DA8AB600710BF9 /* Assets.xcassets */; };
 		90E8931C21DA8AB600710BF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E8931A21DA8AB600710BF9 /* LaunchScreen.storyboard */; };
+		90E8932621DA8B0600710BF9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E8932521DA8B0600710BF9 /* CloudKit.framework */; };
+		90E8932821DA8E7C00710BF9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E8932721DA8E7C00710BF9 /* Message.swift */; };
+		90E8932D21DA94FF00710BF9 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E8932C21DA94FF00710BF9 /* MessageController.swift */; };
+		90E8932F21DAA3F400710BF9 /* MessageListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E8932E21DAA3F400710BF9 /* MessageListTableViewController.swift */; };
+		90E8933121DAA5C900710BF9 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E8933021DAA5C900710BF9 /* DateFormatter.swift */; };
+		90F19D9A21DBDE6300B5AAEA /* EmailSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F19D9921DBDE6300B5AAEA /* EmailSearchTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,13 @@
 		90E8931821DA8AB600710BF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90E8931B21DA8AB600710BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90E8931D21DA8AB600710BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90E8932321DA8B0300710BF9 /* BullitinBoard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BullitinBoard.entitlements; sourceTree = "<group>"; };
+		90E8932521DA8B0600710BF9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		90E8932721DA8E7C00710BF9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		90E8932C21DA94FF00710BF9 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		90E8932E21DAA3F400710BF9 /* MessageListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListTableViewController.swift; sourceTree = "<group>"; };
+		90E8933021DAA5C900710BF9 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		90F19D9921DBDE6300B5AAEA /* EmailSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSearchTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90E8932621DA8B0600710BF9 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +54,7 @@
 			children = (
 				90E8931021DA8AB300710BF9 /* BullitinBoard */,
 				90E8930F21DA8AB300710BF9 /* Products */,
+				90E8932421DA8B0600710BF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +69,43 @@
 		90E8931021DA8AB300710BF9 /* BullitinBoard */ = {
 			isa = PBXGroup;
 			children = (
+				90E8932B21DA94BD00710BF9 /* Resources */,
+				90E8932321DA8B0300710BF9 /* BullitinBoard.entitlements */,
+				90E8933021DAA5C900710BF9 /* DateFormatter.swift */,
+				90E8932A21DA94B600710BF9 /* Controllers */,
+				90E8932921DA94B000710BF9 /* Model */,
+			);
+			path = BullitinBoard;
+			sourceTree = "<group>";
+		};
+		90E8932421DA8B0600710BF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90E8932521DA8B0600710BF9 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90E8932921DA94B000710BF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90E8932721DA8E7C00710BF9 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90E8932A21DA94B600710BF9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				90E8933221DAB54200710BF9 /* ViewController */,
+				90E8932C21DA94FF00710BF9 /* MessageController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		90E8932B21DA94BD00710BF9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				90E8931121DA8AB300710BF9 /* AppDelegate.swift */,
 				90E8931321DA8AB300710BF9 /* ViewController.swift */,
 				90E8931521DA8AB300710BF9 /* Main.storyboard */,
@@ -61,7 +113,16 @@
 				90E8931A21DA8AB600710BF9 /* LaunchScreen.storyboard */,
 				90E8931D21DA8AB600710BF9 /* Info.plist */,
 			);
-			path = BullitinBoard;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		90E8933221DAB54200710BF9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				90E8932E21DAA3F400710BF9 /* MessageListTableViewController.swift */,
+				90F19D9921DBDE6300B5AAEA /* EmailSearchTableViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +157,14 @@
 				TargetAttributes = {
 					90E8930D21DA8AB300710BF9 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,8 +204,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90E8933121DAA5C900710BF9 /* DateFormatter.swift in Sources */,
+				90F19D9A21DBDE6300B5AAEA /* EmailSearchTableViewController.swift in Sources */,
+				90E8932821DA8E7C00710BF9 /* Message.swift in Sources */,
 				90E8931421DA8AB300710BF9 /* ViewController.swift in Sources */,
 				90E8931221DA8AB300710BF9 /* AppDelegate.swift in Sources */,
+				90E8932D21DA94FF00710BF9 /* MessageController.swift in Sources */,
+				90E8932F21DAA3F400710BF9 /* MessageListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,9 +356,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BullitinBoard/BullitinBoard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57FTCZV5HS;
-				INFOPLIST_FILE = BullitinBoard/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BullitinBoard/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,9 +375,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BullitinBoard/BullitinBoard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57FTCZV5HS;
-				INFOPLIST_FILE = BullitinBoard/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BullitinBoard/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
